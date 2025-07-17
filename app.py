@@ -8,12 +8,12 @@ from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.set_page_config(page_title="📊 Supply Chain Demand Predictor", layout="wide")
-st.title("📦 Supply Chain Optimization - Predictive Demand Analysis")
+st.set_page_config(page_title="Supply Chain Demand Predictor", layout="wide")
+st.title("Supply Chain Optimization - Predictive Demand Analysis")
 
 # Load dataset
 data = pd.read_csv("supply_chain_data.csv")
-st.subheader("🧾 Raw Data Preview")
+st.subheader("Raw Data Preview")
 st.dataframe(data.head())
 
 # Drop missing target rows
@@ -75,4 +75,4 @@ for col in features:
 if st.button("Predict"):
     input_df = pd.DataFrame([user_input])
     prediction = model.predict(input_df)[0]
-    st.success(f"🎯 Predicted Number of Products Sold: {prediction:.0f}")
+    st.success(f"Predicted Number of Products Sold: {prediction:.0f}")
